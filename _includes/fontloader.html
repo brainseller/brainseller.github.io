@@ -1,0 +1,15 @@
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+  function loadFont(url){
+	  var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = url;
+    document.head.appendChild(link);
+  }
+  document.body.onload = function() {
+    var url = 'https://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic';
+    loadFont(url);
+    $('a.ext').attr('target', '_blank');
+  }
+
+</script>

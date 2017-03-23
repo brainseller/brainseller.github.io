@@ -1,0 +1,472 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #333;
+$background-color: #eee;
+$brand-color:      #FF5226;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+/* ------------------------------------- *\
+            basics & typography
+\* ------------------------------------- */
+
+body {
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-weight: $base-font-weight;
+	background: url(images/footer_background.png);
+	color: $background-color;
+	background-color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+.fakeBody {
+	background: url(images/light_background.png);
+	background-color: $background-color;
+	color: $text-color;
+	text-shadow: 0 1px 0 #fff;
+	margin: 0;
+	padding: 5px 0;
+	box-shadow: 0 2px 4px #000;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 900;
+	color: #666;
+	line-height: 1.2em;
+}
+h1 {
+	font-size: 2.333333333em;
+}
+h2 {
+	font-size: 2em;
+}
+h3 {
+	font-size: 1.666666667em;
+}
+h4 {
+	font-size: 1.555555556em;
+}
+h5 {
+	font-size: 1.333333333em;
+}
+h6 {
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+a {
+	color: #000;
+	&:hover {
+		color: $brand-color;
+	}
+}
+strong {
+	font-weight: 900;
+}
+
+pre {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+	code {
+		font-family: Menlo, Monaco, "Courier New", monospace;
+		font-weight: normal;
+		color: #ddd;
+		background-color: rgba(0,0,0,0.7);
+		padding: 5px 10px;
+		text-shadow: none;
+		border-radius: 2px;
+	}
+}
+blockquote {
+	font-style: italic;
+	border-left: 1px solid #999;
+	margin-left: 1em;
+	padding-left: 1em;
+	color: #666;
+}
+
+/* ------------------------------------- *\
+            layout & elements
+\* ------------------------------------- */
+
+.mainHead, .mainContent, .mainFooter, .paginator {
+	width: 90%;
+	max-width: 840px;
+	margin: auto;
+}
+.separator {
+	clear: both;
+	height: 0px;
+	width: 100%;
+/*
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #eee;
+*/
+}
+.paginator {
+	margin-top:    32px;
+	margin-bottom: 32px;
+	font-size: 0.875em;
+	line-height: 2.2em;
+	a {
+		line-height: 1.5em;
+	}
+}
+
+/* =========== elements ============= */
+
+input, textarea {
+	border: 1px solid #bdbdbd;
+	border-radius: 2px;
+	padding: 5px 10px;
+	background-color: #fafafa;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.button {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 4px 0;
+	border-radius: 2px;
+	border: 1px solid #bdbdbd;
+	text-decoration: none;
+	background-color: #ddd;
+  background-image: linear-gradient(#ddd, #e0e0e0, 40, #ccc);
+	text-shadow: 0 1px 0 #fff;
+	&.disabled {
+		display: none;
+	}
+}
+.darkButton {
+	background-color: #444;
+	border: 1px solid #000;
+	color: #eee;
+	text-shadow: 0 1px 0 #333;
+  background-image: linear-gradient(#333, #555, 40, #3a3a3a);
+	&:hover {
+		color: #ccc;
+	}
+}
+.contentBlock {
+	background: url(images/body_background.png);
+	padding-top: 1px;
+}
+.mainHead {
+	padding: 1px 0;
+}
+.articleHeader {
+	padding-bottom: 8px;
+}
+.siteTitle {
+	margin-bottom: 32px;
+	line-height: 1em;
+	a {
+		text-decoration: none;
+		color: #666;
+		display: block;
+		width: 258px;
+		height: 142px;
+		text-indent: -400%;
+		background-image: url(images/ff_logo.png);
+    background-image: linear-gradient(transparent, transparent), url(images/ff_logo.svg);
+
+		&:hover { color: #111 }
+	}
+}
+.discretSiteTitle  {
+	font-size: 1em;
+	margin-bottom: 8px;
+	a {
+		width: 250px;
+		height: 50px;
+    background-image: url(images/ff_logo_discret.png);
+    background-image: linear-gradient(transparent, transparent), url(images/ff_logo_discret.svg);
+	}
+}
+.siteClaim {
+	display: none;
+	line-height: 1em;
+	margin-top:    8px;
+	margin-bottom: 0;
+	color: #ccc;
+	a {
+		text-decoration: none;
+		color: #ccc;
+		&:hover {
+			color: #333;
+		}
+	}
+}
+.discretSiteClaim {
+
+	font-size: 0.75em;
+	display: none;
+}
+
+/* content */
+.mainContent {
+	padding-bottom: 32px;
+	h1, h2 {
+		line-height: 1.2em;
+
+	}
+	img {
+		box-shadow: 0 1px 3px #333;
+		max-width: 100%;
+		height: auto;
+		border-radius: 3px;
+		&.noShadow {
+			box-shadow: none;
+		}
+	}
+}
+.rightFloatingImg {
+	float: right;
+	margin: 5px 0 5px 5px;
+}
+.leftFloatingImg {
+	float: left;
+	margin: 5px 5px 5px 0;
+}
+#mainSearch-textbox {
+	margin: 0 2px 0 0;
+}
+.disclaimer {
+	font-size: 0.875em;
+	color: #911;
+}
+.error-status, .error-msg {
+	color: #911;
+}
+h2 a, h3 a {
+	text-decoration: none;
+	border-bottom: 1px solid #999;
+	color: #666;
+	&:hover { color: $brand-color }
+}
+.posted {
+	font-size: 0.875em;
+	font-weight: 900;
+	color: #aaa;
+	padding-left: 30px;
+	background: 0 6px no-repeat;
+  background-image: url(images/calendar@2x.png);
+  background-image: linear-gradient(transparent, transparent), url(images/calendar.svg);
+	background-size: 16px;
+}
+.commentCount {
+	font-size: 0.875em;
+	padding-left: 30px;
+  background: 0 6px no-repeat;
+  background-image: url(images/comment@2x.png);
+  background-image: linear-gradient(transparent, transparent), url(images/comment.svg);
+	background-size: 16px;
+}
+.articleListing {
+	list-style: none;
+	padding: 0;
+	font-size: 0.875em;
+	li {
+		margin: 64px 0;
+	}
+	h3, p {
+		margin: 0px 0;
+	}
+	.artInfo p {
+		margin: 8px 0 0;
+		color: #666;
+		line-height: 1.2em;
+	}
+	.posted, .commentCount {
+    margin-top: 4px;;
+		display: inline-block;
+		background-position: 0 4px;
+	}
+	.commentCount {
+		background-position: 0 6px;
+		margin-left: 32px;
+		a { color: #999; }
+	}
+}
+.mainFooter {
+	h6 {
+		font-size: 0.875em;
+		color: #999;
+		margin-bottom: 0;
+	}
+	.ccInfo p {
+		font-size: 0.875em;
+	}
+	a {
+		color: #aaa;
+		&:hover {
+			color: $brand-color;
+		}
+	}
+}
+
+.homeLink {
+	position: relative;
+	padding-left: 32px;
+	&:before {
+		content: "➟";
+		position: absolute;
+		top: -1px;
+		left: 0;
+		font-size: 28px;
+		color: #999;
+	}
+}
+.about {
+	color: #ddd;
+}
+.portrait {
+	float: right;
+	margin: 0 0 16px 16px;
+	padding: 0;
+	width: 25%;
+	text-align: right;
+	img{
+		border-radius: 60px;
+		box-shadow: 0px 1px 0px #666;
+		max-width: 100%;
+		height: auto;
+	}
+}
+.footNote {
+	font-size: 0.875em;
+	line-height: 1.3em;
+	color: #888;
+}
+.socialList {
+	list-style: none;
+	padding: 0;
+	width: 220px;
+	li {
+		display: inline;
+		a {
+			display: inline-block;
+			width: 59px;
+			height: 59px;
+			text-indent: 100%;
+			overflow: hidden;
+			margin: 0 10px 10px 0;
+			background: url(images/socialLinks.png);
+			background-size: 100%;
+			&.githubLink {
+    			background-position: 0 -236px;
+			}
+			&.twitterLink {
+				background-position: 0 -59px;
+			}
+			&.flickrLink {
+				background-position: 0 -118px;
+			}
+			&.googleplusLink {
+				background-position: 0 -295px;
+			}
+			&.keybaseLink {
+				background-position: 0 -413px;
+			}
+		}
+	}
+}
+
+.ccInfo {
+	clear: both;
+	margin-top: 64px;
+  padding-left: 120px;
+  background: no-repeat;
+  background-image: url(http://jekyllrb.com/img/logo-2x.png);
+  background-size: 100px;
+  min-height: 64px;
+	p {
+		font-size: 0.875em;
+	}
+}
+.law {
+	margin-top: 64px;
+	font-size: 0.75em;
+}
+
+
+/* ------------------------------------- *\
+            media queries
+\* ------------------------------------- */
+
+@media screen and (min-width: 460px) {
+	.professional {
+		display: block;
+		float: left;
+		width: 200px;
+		margin-right: 64px;
+	}
+	.social {
+		display: inline-block;
+	}
+}
+@media screen and (min-width: 640px) {
+	body {
+		font-size: 18px;
+	}
+	.siteClaim{
+		margin-bottom: 8px;
+	}
+}
+@media screen and (min-width: 900px) {
+	.professional {
+		margin-right: 128px;
+	}
+	.socialList {
+		width: 440px;
+	}
+}
+
+@media screen and (min-width: 1500px) {
+	body {
+		font-size: 22px;
+	}
+	.mainHead, .mainContent, .mainFooter, .paginator {
+		max-width: 960px;
+	}
+	.posted {
+		background-size: 22px;
+	}
+	.commentCount {
+		background-size: 22px;
+	}
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+	.siteTitle a {
+    background-image: url(images/ff_logo@2x.png);
+		background-size: 100%;
+    background-image: linear-gradient(transparent, transparent), url(images/ff_logo.svg);
+	}
+	.discretSiteTitle a {
+    background-image: url(images/ff_logo_discret@2x.png);
+		background-size: 100%;
+    background-image: linear-gradient(transparent, transparent), url(images/ff_logo_discret.svg);
+	}
+}
