@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "dotfiles"
+date:   2017-03-23 16:03:28 +0100
+categories: github repository
+link: https://github.com/brainseller/dotfiles
+---
+Some dotfiles to customize my bash and to quickly setup a new mac.
